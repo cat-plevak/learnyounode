@@ -55,6 +55,30 @@
 // })
 
 
-const filterFn = require('./module-6.js');
+// const filterFn = require('./module-6.js');
+// const directory = process.argv[2];
+// const filterStr = process.argv[3];
+//
+// filterFn(directory, filterStr, (err, files) => {
+//   if (err) {
+//     console.log('there is an error:', err )
+//   } else {
+//     files.forEach((file) => {
+//       console.log(file)
+//     })
+//   }
+// })
+
+const filtered = require('./module-6.js');
 const directory = process.argv[2];
-const filterStr = '.' + process.argv[3];
+const ext = process.argv[3];
+
+filtered(directory, ext, (err, files) => {
+  if(err) {
+    console.log('there is an error', err)
+  } else {
+    files.forEach((file) => {
+      console.log(file)
+    })
+  }
+})
